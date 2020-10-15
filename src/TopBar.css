@@ -1,0 +1,23 @@
+.top-bar {
+   display: flex;
+   background-color: #1976d2;
+}
+
+.title {
+   padding: calc(20px + 2vmin);
+   font-size: calc(10px + 2vmin);
+   color: white;
+   font-weight: 700;
+   cursor: pointer;
+}
+
+.menu {
+   display: flex;
+   /* align-items: left; */
+   /* justify-content: center; */
+}
+
+
+.ttt {
+   background-color: white;
+}

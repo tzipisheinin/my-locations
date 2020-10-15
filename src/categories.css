@@ -1,0 +1,9 @@
+.categories {
+   display: grid;
+   grid-template-columns: 5fr 3fr;
+   padding-right: 2px;
+}
+
+.categories-list {
+   padding: 50px;
+}

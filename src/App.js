@@ -1,25 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import TopBar from './TopBar'
+import Categories from'./Categories'
+import categoriesStore from './AppStore/Categories'
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+
 import './App.css';
 
-function App() {
+function Home() {
+  const actions = [{name: "Categories", action: () => window.location.hash = "/categories" }];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TopBar title="Home" menu={actions} />
+      <div className="content">
+        <h2 class="text"> Welcome to Location app ...</h2>
+        {/* <img alt="location" src='./location.png' /> */}
+      </div>
     </div>
+  );
+}
+
+function App() {
+
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/categories">
+          <Categories store={categoriesStore} />
+        </Route>          
+      </Switch>
+    </Router>
   );
 }
 
